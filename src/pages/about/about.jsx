@@ -1,5 +1,5 @@
-import DropDown from '../../components/dropdown/index'
-import SectionImg from '../../components/section-img'
+import DropDown from '../../components/dropdown/dropdown'
+import SectionImg from '../../components/section-img/img'
 
 function About(){
     return (

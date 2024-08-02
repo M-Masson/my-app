@@ -1,4 +1,4 @@
-import SectionImg from "../../components/section-img"
+import SectionImg from "../../components/section-img/img"
 
 
 function Home(){
