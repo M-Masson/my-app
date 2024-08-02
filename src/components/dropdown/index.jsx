@@ -8,9 +8,11 @@ const dropdownBar = [
     {title:"Sécurité", text:"La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."}
 ]
 
+const element = dropdownBar
+
 function DropDown() {
     // Initialisation de l'état pour stocker l'ouverture/fermeture de chaque élément
-    const [openStates, setOpenStates] = useState(Array(dropdownBar.length).fill(false))
+    const [openStates, setOpenStates] = useState(Array(element.length).fill(false))
 
     // Fonction pour basculer l'état d'ouverture/fermeture pour un élément spécifique
     const toggleDropdown = (index) => {
@@ -23,7 +25,7 @@ function DropDown() {
 
     return (
         <div id='value'>
-            {dropdownBar.map((item, index) => (
+            {element.map((item, index) => (
                 <div key={index} className={`div-element ${openStates[index] ? 'div-open':''}`}>
                     <div className='div-value'>
                         <h1>{item.title}</h1>
