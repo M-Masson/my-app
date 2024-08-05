@@ -1,6 +1,6 @@
 function Logements (){
     return(
-        <div>
+        <div >
             <h1>Page logements</h1>
         </div>
     )

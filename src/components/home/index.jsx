@@ -1,8 +1,9 @@
-
 const HomeImg = ()=>{
     return(
         <div id='img-container' className='home-container'>
-            <p>Chez vous, partout et ailleurs</p>
+            <div id="div-background"></div>
+            <h1>Chez vous, partout et ailleurs</h1>
+            
         </div>
     )
 }
