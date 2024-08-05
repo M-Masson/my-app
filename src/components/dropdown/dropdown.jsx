@@ -11,10 +11,10 @@ const dropdownBar = [
 const element = dropdownBar
 
 function DropDown() {
-    // Initialisation de l'état pour stocker l'ouverture/fermeture de chaque élément
+   
     const [openStates, setOpenStates] = useState(Array(element.length).fill(false))
 
-    // Fonction pour basculer l'état d'ouverture/fermeture pour un élément spécifique
+    
     const toggleDropdown = (index) => {
         setOpenStates(prevState => {
             const newState = [...prevState]
@@ -37,7 +37,7 @@ function DropDown() {
                     </div>
                     <p
                         id='p-fiabilite'
-                        className={openStates[index] ? 'p-fiabilite' : 'dropdown-close-txt'}>
+                        className={openStates[index] ? 'dropdown-open-txt' : 'dropdown-close-txt'}>
                         {item.text}
                     </p>
                 </div>
