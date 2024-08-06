@@ -7,27 +7,26 @@ import Error from './pages/error/error';
 import About from './pages/about/about';
 import Header from './components/Header/header';
 import Footer from './components/footer/footer';
-import array from './data/logements.json'
-import './styles/style.sass'
-
+import array from './data/logements.json';
+import './styles/style.sass';
 
 const rootElement = document.getElementById('root');
 const root = ReactDom.createRoot(rootElement);
 
-const LogementId = () => {
-
+function LogementId (){
     const { id } = useParams()
-    console.log(id)
-    const logements = array.find(logement => logement.id === id)
+    const logementsdata = array.find(logement => logement.id === id)
 
-    if(!logements){
+    if(!logementsdata){
         return (
             <Error /> 
         )
     }
     
-    return <Logements logement={logements} />
+    return <Logements logement={logementsdata} />
 }
+
+
 
 root.render(
     <React.StrictMode>
@@ -44,3 +43,4 @@ root.render(
         </Router>
    </React.StrictMode>
 );
+

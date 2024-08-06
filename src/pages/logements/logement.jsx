@@ -1,7 +1,10 @@
+import Information from "../../components/logement/logement"
+
 function Logements (){
     return(
         <div >
-            <h1>Page logements</h1>
+            <Information />
+            
         </div>
     )
 }
