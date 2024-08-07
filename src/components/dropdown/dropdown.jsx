@@ -26,7 +26,6 @@ function DropDown() {
             {title: "Description", text: logementsdata.description},
             {title: "Equipements", text: logementsdata.equipments}
         ]
-        console.log(logementsdata.equipments)
         element = logements
     }
 

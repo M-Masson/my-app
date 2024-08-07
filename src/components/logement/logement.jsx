@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import array from '../../data/logements.json'
 import DropDown from '../dropdown/dropdown'
+import Rating from './rating'
 
 
 
@@ -27,12 +28,10 @@ function Information(){
                     <div id='host'>
                         <p id='nom'>{logementsdata.host.name}</p>
                         <div id='photo-profil'>
-                            <img src={logementsdata.host.picture} alt="photo de profil" />
+                            <img src={logementsdata.host.picture} alt="icone de profil" />
                         </div>
                     </div>
-                    <div id='rating'>
-
-                    </div>
+                    <Rating/>
                 </div>
                 
             </div>
