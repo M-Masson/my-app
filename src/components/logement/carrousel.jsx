@@ -33,7 +33,7 @@ function Carrousel(){
     } else {
         return (
             <div id="carrousel">
-                <img src={imgSlide[0]} alt="Slide" />
+                <img src={imgSlide[0]} alt="Slide" id='slide'/>
             </div>
         )
     }
