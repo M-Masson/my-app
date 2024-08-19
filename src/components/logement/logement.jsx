@@ -3,9 +3,6 @@ import array from '../../data/logements.json'
 import DropDown from '../dropdown/dropdown'
 import Rating from './rating'
 
-
-
-
 function Information(){
     const { id } = useParams()
     const logementsdata = array.find(logement => logement.id === id)
@@ -33,7 +30,6 @@ function Information(){
                     </div>
                     <Rating/>
                 </div>
-                
             </div>
             <div id="details">
                 <DropDown />

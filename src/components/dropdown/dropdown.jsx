@@ -28,15 +28,29 @@ function DropDown() {
         ]
         element = logements
     }
-
+    
     const [openStates, setOpenStates] = useState(Array(element.length).fill(false))
+    const [varState, setVarStates] = useState(Array(element.length).fill(false))
+    
 
     const toggleDropdown = (index) => {
+        
         setOpenStates(prevState => {
             const newState = [...prevState]
             newState[index] = !newState[index]
             return newState
         })
+        setVarStates(prevVariable=>{
+            const newVariable = [...prevVariable]
+            if(newVariable[index]==false){
+                newVariable[index] = !newVariable[index]
+                
+            }
+           
+            return newVariable
+            
+        }
+        )
     }
     return (
         <div id='value'>
@@ -52,7 +66,7 @@ function DropDown() {
                     </div>
                     <p
                         id='p-fiabilite'
-                        className={openStates[index] ? 'dropdown-open-txt' : 'dropdown-close-txt'}>
+                        className={`${openStates[index] ? 'dropdown-open-txt' : 'dropdown-close-txt'} ${varState[index] ? '' : 'test'}`}>
                         {item.text}
                     </p>
                 </div>

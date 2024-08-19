@@ -8,7 +8,7 @@ $primary-font : 'Montserrat', sans-serif
     flex-direction: column
     gap: 10vh
 header
-    padding:40px 100px 0px 100px
+    padding: 3% 7% 0px
 nav
     display: flex
     justify-content: space-between
@@ -25,14 +25,18 @@ nav
     .underline-off
         color: black 
         text-decoration: none
+        width: 50%
     .underline-on
         color: black
         text-decoration: underline
+        width: 50%
 
     div
         display: flex 
         justify-content: space-between
-        gap: 57px
+        width: 20%
+        align-items: center
+        text-align: end
 
 
 footer 
@@ -177,12 +181,14 @@ body
     rotate: 0deg !important
     transition: transform 0.5s
 
+.test
+    visibility: hidden
 
-.dropdown-close-txt 
-    position: relative
+
+.dropdown-close-txt:not(.test)
     visibility: hidden
     z-index: -1
-    animation: dropUp 1.5s forwards
+    animation: dropUp 1.5s
 
 
 .dropdown-open-txt 
@@ -190,18 +196,19 @@ body
     margin: 0
     border-radius: 5px
     padding: 10px 10px 5px 5px
-    position: relative
     z-index: 1
-    animation: dropDown 0.5s forwards
+    animation: dropDown 0.5s
 
 
 @keyframes dropDown 
     0% 
         transform: translateY(-150px)
         opacity: 0
+        visibility: hidden
 
     30%
         opacity: 0
+        visibility: hidden
     
     100% 
         transform: translateY(0)
@@ -218,6 +225,7 @@ body
 
     40%
         opacity: 0
+        visibility: hidden
     
     100% 
         transform: translateY(-150px)
@@ -254,7 +262,7 @@ body
             align-items: end
             color: white
             padding: 0 20px
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%)
+            background: linear-gradient(180deg, #00000000 0%, #00000000 50%,#00000099 100%)
             border-radius: 0 0 10px 10px
 
 #top-info

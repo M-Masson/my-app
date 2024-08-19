@@ -9,6 +9,7 @@ import Header from './components/Header/header';
 import Footer from './components/footer/footer';
 import array from './data/logements.json';
 import './styles/style.sass';
+import { Navigate } from "react-router-dom";
 
 const rootElement = document.getElementById('root');
 const root = ReactDom.createRoot(rootElement);
@@ -18,9 +19,8 @@ function LogementId (){
     const logementsdata = array.find(logement => logement.id === id)
 
     if(!logementsdata){
-        return (
-            <Error /> 
-        )
+        return <Navigate to="/error" replace={true} />
+       
     }
     
     return <Logements logement={logementsdata} />
@@ -37,6 +37,7 @@ root.render(
                 <Route path="/home" element={<Home />}/>
                 <Route  path ="/logements/:id" element={<LogementId/>}/>
                 <Route path = "/about" element={<About/>}/>
+                <Route path ="/error" element={<Error/>}/>
                 <Route path ="*" element={<Error/>}/>
             </Routes>
             <Footer/>
