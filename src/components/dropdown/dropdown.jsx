@@ -13,18 +13,27 @@ const dropdownBar = [
 
 
 
-
 function DropDown() {
     const { id } = useParams()
     const logementsdata = array.find(logement => logement.id === id)
+
+    
+
+    
+        
+    
+
     let element = ""
 
     if(!id){
         element = dropdownBar
     }else{
+        
+        const equipement = logementsdata.equipments
+        
         const logements = [
             {title: "Description", text: logementsdata.description},
-            {title: "Equipements", text: logementsdata.equipments}
+            {title: "Equipements", text: equipement}
         ]
         element = logements
     }
@@ -42,7 +51,7 @@ function DropDown() {
         })
         setVarStates(prevVariable=>{
             const newVariable = [...prevVariable]
-            if(newVariable[index]==false){
+            if(newVariable[index]===false){
                 newVariable[index] = !newVariable[index]
                 
             }
@@ -64,11 +73,21 @@ function DropDown() {
                             alt="fleche déroulante"
                             onClick={() => toggleDropdown(index)}/>
                     </div>
-                    <p
-                        id='p-fiabilite'
-                        className={`${openStates[index] ? 'dropdown-open-txt' : 'dropdown-close-txt'} ${varState[index] ? '' : 'test'}`}>
-                        {item.text}
-                    </p>
+                    {item.title === "Equipements" ? (
+                        <ul
+                            id='equipments-list'
+                            className={`${openStates[index] ? 'dropdown-open-txt' : 'dropdown-close-txt'} ${varState[index] ? '' : 'test'}`}>
+                            {item.text.map((equipement, idx) => (
+                                <li key={idx}>{equipement}</li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p
+                            
+                            className={`${openStates[index] ? 'dropdown-open-txt' : 'dropdown-close-txt'} ${varState[index] ? '' : 'test'}`}>
+                            {item.text}
+                        </p>
+                    )}
                 </div>
             ))}
         </div>
