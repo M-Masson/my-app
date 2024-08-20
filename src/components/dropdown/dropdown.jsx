@@ -17,12 +17,6 @@ function DropDown() {
     const { id } = useParams()
     const logementsdata = array.find(logement => logement.id === id)
 
-    
-
-    
-        
-    
-
     let element = ""
 
     if(!id){

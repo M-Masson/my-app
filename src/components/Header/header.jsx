@@ -1,36 +1,38 @@
-import {Link} from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '../../assets/svg/logo.svg'
-import React, { useState } from 'react'
+import React from 'react'
 
-const nav = [{title:"Accueil", nav:"home"},
-             {title:"A Propos", nav:"about"}
-            ]
+const nav = [
+    { title: "Accueil", nav: "home" },
+    { title: "A Propos", nav: "about" }
+]
 const element = nav
 
+function Header() {
+    const location = useLocation()
 
-
-function Header(){
-    const [NavOn, setNavOn] = useState(Array(element.length).fill(false))
-
-
-    const swapNav = (index) => {
-        setNavOn(index)
-    }
-
-    return(
+    return (
         <header>
             <nav>
                 <img src={logo} alt="logo kasa" />
                 <div id='navigation'>
-                {element.map((item, index) => (
-                    <Link key={index} to={`/${item.nav}`} id={item.nav} className={`underline-${NavOn === index ? 'on':'off'}`} onClick={()=>swapNav(index)}>{item.title}</Link>
-                ))}
-                    
-                    
+                    {element.map((item, index) => {
+                        const isActive = location.pathname === `/${item.nav}`
+                        return (
+                            <Link
+                                key={index}
+                                to={`/${item.nav}`}
+                                id={item.nav}
+                                className={`underline-${isActive ? 'on' : 'off'}`}
+                                >
+                                {item.title}
+                            </Link>
+                        );
+                    })}
                 </div>
             </nav>
         </header>
-    )
-
+    );
 }
-export default Header
+
+export default Header;
