@@ -1,10 +1,10 @@
-import HomeImg from '../../components/home/index'
+import BannerImg from '../../components/Banner/img'
 import Gallery from "../../components/home/gallery"
 
 function Home(){
     return(
         <div id="container">
-            <HomeImg />
+            <BannerImg />
             <Gallery />
         </div>
     )

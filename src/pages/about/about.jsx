@@ -1,10 +1,10 @@
 import DropDown from '../../components/dropdown/dropdown'
-import SectionImg from '../../components/section-img/img'
+import BannerImg from '../../components/Banner/img'
 
 function About(){
     return (
         <div id="container">
-            <SectionImg />
+            <BannerImg />
             <DropDown/>
         </div>
     )

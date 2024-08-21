@@ -27,12 +27,12 @@ function Header() {
                                 >
                                 {item.title}
                             </Link>
-                        );
+                        )
                     })}
                 </div>
             </nav>
         </header>
-    );
+    )
 }
 
 export default Header;
