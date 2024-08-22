@@ -6,7 +6,7 @@ import image2 from '../../assets/images/image2.png'
 
 const BannerImg = ()=>{
     const location = useLocation()
-     const isActive = location.pathname === `/home`
+     const isActive = location.pathname === `/home` || location.pathname === '/'
     return(
         <div id='img-container'>
             <div id={`${isActive ? 'div-background' : ''}`}>
